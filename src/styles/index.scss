@@ -1,0 +1,226 @@
+@import '~tachyons-sass/tachyons.scss';
+
+.h45 {
+  height: 12rem;
+}
+
+.w45 {
+  width: 12rem;
+}
+
+.dg {
+  display: grid;
+}
+
+.blog-post-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem 0.25rem;
+  border-bottom: 2px solid #EEE;
+}
+
+.blog-post-preview:last-child {
+  border-bottom-width: 0;
+}
+
+.blog-post-preview .title, .blog-post-preview .date, .blog-post-preview .link {
+  margin: 0 auto;
+}
+
+.blog-post-preview .date {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.bg-gradient {
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+.b--gradient {
+  border-style: solid;
+  border-width: 20px;   
+  border-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  border-image-slice: 1;
+  -webkit-border-image: Gradient 15s ease infinite;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+.b--gradient-nb {
+  border-style: solid;
+  border-width: 20px;   
+  border-image: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  border-image-slice: 1;
+  -webkit-border-image: Gradient 15s ease infinite;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  border-bottom: none;  
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.tab {
+  position: relative;
+  margin-bottom: 1px;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+}
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+label {
+  position: relative;
+  display: block;
+  padding: 0 0 0 1em;
+  background: #000;
+  font-weight: 200;
+  line-height: 3;
+  cursor: pointer;
+}
+.blue label {
+  background: #000;
+}
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  -webkit-transition: max-height .35s;
+  -o-transition: max-height .35s;
+  transition: max-height .35s;
+}
+.blue .tab-content {
+  background: #fff;
+}
+.tab-content p {
+  margin: 1em;
+}
+/* :checked */
+input:checked ~ .tab-content {
+  max-height: 15em;
+}
+/* Icon */
+label::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3;
+  text-align: center;
+  -webkit-transition: all .35s;
+  -o-transition: all .35s;
+  transition: all .35s;
+}
+input[type=checkbox] + label::after {
+  content: "+";
+}
+input[type=radio] + label::after {
+  content: "\25BC";
+}
+input[type=checkbox]:checked + label::after {
+  transform: rotate(315deg);
+}
+input[type=radio]:checked + label::after {
+  transform: rotateX(180deg);
+}
+
+.fadeIn {
+  animation: fadeIn 5s;
+  will-change: opacity;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInSlideUp {
+  animation: slideUp 7s, fadeIn 9s;
+  will-change: transform, opacity;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.mtMinus5 {
+  margin-top: -5rem;
+}
+
+.bottom {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border: 0.1em solid #333;
+  border-radius: 50%;
+  margin-left: 0.75em;
+}
+
+.bottom:after {
+  content: '';
+  display: inline-block;
+  margin-top: 0.75em;
+  width: 1.0em;
+  height: 1.0em;
+  border-top: 0.1em solid #333;
+  border-right: 0.1em solid #333;
+  -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
